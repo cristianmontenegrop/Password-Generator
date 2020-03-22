@@ -51,13 +51,13 @@ function generatePassword() {
         alert("Password accepted")
 
     } 
-    else {
+    else if (!(lowerCase || upperCase || numberPrompt || specialCaracter)) {
         // if the elements in the array are all false, then the alert comes up and the function is reseted
         
         alert("You must select an input type");
         generatePassword.call();
+       
       
-
     }
 
 
@@ -92,29 +92,8 @@ function generatePassword() {
         password = password + newChar;
     }
 
-
-
-
-    // push the password to the page
-    //make sure we get one of ecah type in our password
-    // for (i = 0; i < includedOptions.length; i++) {
-    //     var guaranteedCharacter =  includedOptions[i]();
-    //     console.log(guaranteedCharacter);
-    //     var oldChar = newPassword[i];
-    //     console.log(newPassword[i]);
-    //     newPassword.replace(oldChar, guaranteedCharacter);
-    //     console.log(newPassword);
-    // }
-
-
-
-
-
-
     // WHEN all prompts are answered
     // THEN a password is generated that matches the selected criteria
-
-
 
     // WHEN the password is generated
     // THEN the password is either displayed in an alert or written to the page
@@ -123,7 +102,6 @@ function generatePassword() {
     // console.log(password)
     return password;
 }
-
 
 
 function getRandomLower() {
