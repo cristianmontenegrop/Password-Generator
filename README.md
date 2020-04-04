@@ -1,50 +1,17 @@
-# Password-Generator
+# Password Genetator
 
-# 03 JavaScript: Password Generator
 
-Create an application that generates a random password based on user-selected criteria. This app will run in the browser and feature dynamically updated HTML and CSS powered by your JavaScript code. It will also feature a clean and polished user interface and be responsive, ensuring that it adapts to multiple screen sizes.
+- To start, I've defined the imputs that need to be created to understand what the user needs, divided in 2 sections mainly, the prompting of the carater length, with 2 conditions, no less than 8, no more than 128 characters, if the user imputs outside of this range, the function restarts.
 
-If you are unfamiliar with special characters, take a look at [some examples](https://www.owasp.org/index.php/Password_special_characters).
+- The other user imput booleans on the style of password to be generated were created, to understand if the user wanted Uppercase, Lowercase, Numbers and or Special characters. if none is selected, a message is prompted and the function restarts
 
-## User Story
+- 4 Functions to generate random strings using chart code of the desired characters " upper, lower, number, symbol", then assigning the range by adding a start number, an multiplying by the length of the charater type from the chart.
 
-```
-AS AN employee with access to sensitive data
-I WANT to randomly generate a password that meets certain criteria
-SO THAT I can create a strong password that provides greater security
-```
+- "if" statements to select only the selected type of characters to be added to the password and call the corresponding function to the indludedOptions array
 
-## Acceptance Criteria
+- a "for loop" was created to run the following as many times as passwordLength represents
+    - Generate a random number that would translate into selecting one of the active charater types available from indludedOptions, and put it into randomNumber Variable
+    - NewChar variable that is created from the selecting of the randomly generated strings from includedOptions
+    - Each new charater is added to the previous one by += object
 
-```
-GIVEN I need a new, secure password
-WHEN I click the button to generate a password
-THEN I am presented with a series of prompts for password criteria
-WHEN prompted for password criteria
-THEN I select which criteria to include in the password
-WHEN prompted for the length of the password
-THEN I choose a length of at least 8 characters and no more than 128 characters
-WHEN prompted for character types to include in the password
-THEN I choose lowercase, uppercase, numeric, and/or special characters
-WHEN I answer each prompt
-THEN my input should be validated and at least one character type should be selected
-WHEN all prompts are answered
-THEN a password is generated that matches the selected criteria
-WHEN the password is generated
-THEN the password is either displayed in an alert or written to the page
-```
-
-The following image demonstrates the application functionality:
-
-![password generator demo](./Assets/03-javascript-homework-demo.png)
-
-## Review
-
-You are required to submit the following for review:
-
-* The URL of the deployed application.
-
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
-
-- - -
-© 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
+- finally the variable password is returned from the function generatePassword so the function writePassword can use it

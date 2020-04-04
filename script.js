@@ -41,6 +41,7 @@ function generatePassword() {
     var specialCaracter = confirm("Special Caracters?");
     var includedOptions = [];
 
+
     console.log(passwordLength); console.log(lowerCase); console.log(upperCase); console.log(numberPrompt); console.log(specialCaracter);
 
     // WHEN I answer each prompt
@@ -77,9 +78,8 @@ function generatePassword() {
     if (specialCaracter) {
         includedOptions.push(getRandomSymbol)
     };
-
     console.log(includedOptions);
-
+   
     for (i = 0; i < passwordLength; i++) {
 
         // get random number between 0 and the length of the array
@@ -99,7 +99,7 @@ function generatePassword() {
     // THEN the password is either displayed in an alert or written to the page
 
     // alert(password);
-    // console.log(password)
+    console.log(password)
     return password;
 }
 
